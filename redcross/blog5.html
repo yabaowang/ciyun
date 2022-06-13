@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>武汉红十字会捐款明细</title>
+
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.3/jquery.csv.min.js"></script>
+        <script type="text/javascript" lang="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.1/xlsx.full.min.js"></script>
+    </head>
+
+    <body>
+
+        <div>
+
+            <div class="jumbotron" style="text-align: center;">
+                <h1 id="headerTitle">武汉红十字会捐款明细</h1>
+            </div>
+
+            <div class="justify-content-center" style="width: 100%; padding: 0 8rem">
+
+                <div class="p-3" style="width: 100hw; padding: 1rem">
+                    <h2>武汉红十字会捐款收支明细</h2>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>时间</th>
+                                <th>微信二维码及pos机（人数）</th>
+                                <th>微信二维码及pos机（金额）</th>
+                                <th>现金（人数）</th>
+                                <th>云闪付（人数）</th>
+                                <th>现金及云闪付金额（金额）</th>
+                                <th>交通银行（人数）</th>
+                                <th>交通银行（金额）</th>
+                                <th>农业银行（人数）</th>
+                                <th>农业银行（金额）</th>
+                                <th>支付宝（人数）</th>
+                                <th>支付宝（金额）</th>
+                                <th>数据链接</th>
+                            </tr>
+                        </thead>
+                        <tbody id="showExcel"></tbody>
+                    </table>
+                </div>
+                    
+                <div class="p-3" style="width:100hw; padding: 1rem">
+                    <h2>武汉红十字会捐款实际与公示对比</h2>
+                    <ul class="list-group" id="showCSV" >
+                    
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- my script reference -->
+        <script type="text/javascript" src="./script.js"></script>
+
+        
+    </body>
+
+</html>

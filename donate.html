@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>捐助-词云</title>
+    <!-- 引入 echarts.js -->
+
+    <script src="js/echarts.min.js"></script>
+    <script src="https://oisanjavax.github.io/echarts-wordcloud/dist/echarts-wordcloud.min.js"></script>
+
+</head>
+
+
+<body>
+
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+
+    <div id="main" style="width:800px;height:500px;"></div>
+
+    <script type="text/javascript">
+
+        // 基于准备好的dom，初始化echarts实例
+
+        var myChart = echarts.init(document.getElementById('main'));
+
+
+
+        // 指定图表的配置项和数据
+
+       // 调试页面回打印出点击的节点名称
+
+
+option = {
+
+    tooltip: {
+        show: true
+    },
+    series: [{
+        type: "wordCloud",
+        gridSize:11,
+        shape: 'diamond',
+        sizeRange: [12, 50],
+        width: 800,
+        height: 500,
+        textStyle: {
+            normal: {
+                color: function() {
+                    return 'rgb(' + [
+                        Math.round(Math.random() * 160),
+                        Math.round(Math.random() * 160),
+                        Math.round(Math.random() * 160)
+                    ].join(',') + ')';
+                }
+            },
+            emphasis: {
+                shadowBlur: 10,
+                shadowColor: '#333'
+            }
+        },
+        data: [{name: " 白血病,",value: 202},
+{name: " 再生性贫血,",value: 838},
+{name: " 留守,",value: 9092},
+{name: " 病重,",value: 1746},
+{name: " 丧失亲人,",value: 2161},
+{name: " 爸爸走了,",value: 65},
+{name: " 学费,",value: 871},
+{name: " 捡破烂,",value: 2761},
+{name: " 旧衣物,",value: 696},
+{name: " 勤工俭学,",value: 2202},
+{name: " 辍学,",value: 991},
+{name: " 希望,",value: 234},
+{name: " 梦想,",value: 2257},
+{name: " 上大学,",value: 469},
+{name: " 谢谢你,",value: 2346},
+{name: " 故事书,",value: 1843},
+{name: " 大白,",value: 569},
+{name: " 不买,",value: 3852},
+{name: " 妈妈走了,",value: 297},
+{name: " 爷爷病了,",value: 454},
+{name: " 活下去,",value: 1377},
+{name: " 坚持,",value: 3141},
+{name: " 等待,",value: 2515},
+{name: " 善良,",value: 11371},
+{name: " 捐助,",value: 667},
+{name: " 玩具,",value: 247},
+{name: " 卫生水,",value: 62},
+{name: " 爱心,",value: 207},
+{name: " 传递,",value: 164},
+{name: " 乡村教师,",value: 72},
+{name: " 社会,",value: 589},
+{name: " 希望小学,",value: 874},
+{name: " 教育平等,",value: 51},
+{name: " 城市,",value: 40},
+{name: " 农村,",value: 1293},
+{name: " 未来,",value: 33},
+{name: " 翅膀,",value: 8280},
+{name: " 科技,",value: 504},
+{name: " 药品,",value: 220},
+{name: " 政府,",value: 110},
+{name: " 童年,",value: 345},
+{name: " 回报,",value: 70},
+{name: " 福气,",value: 4644},
+{name: " 报答,",value: 35},
+{name: " 理想,",value: 1175},
+{name: " 生活,",value: 184},
+{name: " 美好,",value: 184},
+{name: " 谢谢,",value: 443},
+{name: " 捐款,",value: 142},
+{name: " 旧衣物,",value: 394},
+{name: " 免费,",value: 341},
+{name: " 渴望,",value: 204},
+{name: " 眼神,",value: 390},
+{name: " 一点钱,",value: 132},
+{name: " 如果,",value: 611},
+{name: " 可是,",value: 343},
+{name: " 公平,",value: 1477},
+{name: " 加油,",value: 215},
+{name: " 付出,",value: 80},
+{name: " 青少年,",value: 14},
+{name: " 祖国,",value: 95},
+{name: " 期待,",value: 72},
+{name: " 成才,",value: 14},
+{name: " 电子品,",value: 1700},
+{name: " 吃饭,",value: 17},
+{name: " 农活,",value: 15},
+{name: " 要努力,",value: 184},
+{name: " 走出去,",value: 5034},
+{name: " 帮帮我,",value: 1583},
+{name: " 感动,",value: 2475},
+{name: " 感恩,",value: 2252},
+{name: " 捐赠,",value: 6284}
+        ],
+    }]
+
+};
+        // 使用刚指定的配置项和数据显示图表。
+
+        myChart.setOption(option);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>ECharts</title>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <!-- 引入 echarts.js -->
+
+    <script src="js/echarts.min.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/jquery.min.js"></script>
+    
+</head>
+
+<body>
+
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+
+    <div id="main" style="width: 600px;height:  475px;"></div>
+
+    <script type="text/javascript">
+
+        // 基于准备好的dom，初始化echarts实例
+
+        var myChart = echarts.init(document.getElementById('main'));
+
+
+
+        // 指定图表的配置项和数据
+
+       // 调试页面回打印出点击的节点名称
+var allData = {
+    "citys1": [{
+            "name": "黑龙江红十字会",
+            "value": [126.630807, 45.724933, 110.000000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#F55881"
+                }
+            }
+        },{
+            "name": "河北以岭药业有限公司",
+            "value": [109.838129, 40.183354, 500.000000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#F55881"
+                }
+            }
+        }],
+    "citys2": [ {
+            "name": "江西华强医疗器械有限公司",
+            "value": [116.171115, 28.220810, 4.500000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#81F558"
+                }
+            }
+        },
+
+        {
+            "name": "陕西韩女士",
+            "value": [108.939037, 34.343423, 1.200000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#81F558"
+                }
+            }
+        },
+
+        {
+            "name": "河南省红十字会",
+            "value": [113.686320, 34.777110, 14.930000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#81F558"
+                }
+            }
+        }],
+    "citys3": [{
+            "name": "河南省红十字会",
+            "value": [113.686320, 34.777110, 14.927000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#8158F5"
+                }
+            }
+        },
+
+       
+
+        {
+            "name": "天津市红十字会",
+            "value": [117.186333, 39.125004, 20.110000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#8158F5"
+                }
+            }
+        },
+
+        
+
+        {
+            "name": "涿州华诺救生装备有限公司",
+            "value": [115.952941, 39.482574, 2.300000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#8158F5"
+                }
+            }
+        },
+
+        {
+            "name": "苏州宝集沣生物科技有限公司",
+            "value": [120.585868, 31.281277, 56.700000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#8158F5"
+                }
+            }
+        }],
+    "citys4": [{
+            "name": "湖北稳健集团",
+            "value": [114.913858, 30.463724, 1.000000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#58F581"
+                }
+            }
+        },{
+            "name": "安徽惟北大鱼环保科技有限公司",
+            "value": [117.152594, 31.860424, 5.000000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#58F581"
+                }
+            }
+        },{
+            "name": "上海宇昂科技王宇董事长",
+            "value": [121.432278, 31.167684, 4.900000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#58F581"
+                }
+            }
+        }],
+    "citys4": [{
+            "name": "北京森根比亚生物工程技术有限公司",
+            "value": [116.674608, 40.360543, 36.000000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#F58158"
+                }
+            }
+        },{
+            "name": "中国科学院王中林院士",
+            "value": [118.769008, 32.054745, 20.000000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#F58158"
+                }
+            }
+        },{
+            "name": "杭州占戈贸易有限公司",
+            "value": [120.218587, 30.260936, 7.000000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#F58158"
+                }
+            }
+        },
+
+        {
+            "name": "江苏新农科技有限公司",
+            "value": [121.063256, 32.536145, 76.000000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#F58158"
+                }
+            }
+        },
+
+        {
+            "name": "湖北稳健集团",
+            "value": [114.913858, 30.463724, 2.460000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#F58158"
+                }
+            }
+        }],
+    "citys5": [{
+            "name": "杭州占戈贸易有限公司",
+            "value": [120.218587, 30.260936, 7.000000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#31F5F8"
+                }
+            }
+        },
+
+        {
+            "name": "江苏新农科技有限公司",
+            "value": [121.063256, 32.536145, 76.000000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#31F5F8"
+                }
+            }
+        },
+
+        {
+            "name": "湖北稳健集团",
+            "value": [114.913858, 30.463724, 2.460000],
+            "symbolSize": 7,
+            "itemStyle": {
+                "normal": {
+                    "color": "#31F5F8"
+                }
+            }
+        }],
+    "moveLines": [{
+            "fromName": "河北以岭药业有限公司",
+            "toName": "武汉",
+            "coords": [
+                [109.838129, 40.183354],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "上海宇昂科技王宇董事长",
+            "toName": "武汉",
+            "coords": [
+                [121.432278, 31.167684],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "杭州占戈贸易有限公司",
+            "toName": "武汉",
+            "coords": [
+                [120.218587, 30.260936],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "江苏新农科技有限公司",
+            "toName": "武汉",
+            "coords": [
+                [121.063256, 32.536145],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "湖北稳健集团",
+            "toName": "武汉",
+            "coords": [
+                [114.913858, 30.463724],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "湖北稳健集团",
+            "toName": "武汉",
+            "coords": [
+                [114.913858, 30.463724],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "中国科学院王中林院士",
+            "toName": "武汉",
+            "coords": [
+                [118.769008, 32.054745],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "安徽惟北大鱼环保科技有限公司",
+            "toName": "武汉",
+            "coords": [
+                [117.152594, 31.860424],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "黑龙江红十字会",
+            "toName": "武汉",
+            "coords": [
+                [126.630807, 45.724933],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "河南省红十字会",
+            "toName": "武汉",
+            "coords": [
+                [113.686320, 34.777110],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "河南省红十字会",
+            "toName": "武汉",
+            "coords": [
+                [113.686320, 34.777110],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "江西华强医疗器械有限公司",
+            "toName": "武汉",
+            "coords": [
+                [116.171115, 28.220810],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "陕西韩女士",
+            "toName": "武汉",
+            "coords": [
+                [108.939037, 34.343423],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "天津市红十字会",
+            "toName": "武汉",
+            "coords": [
+                [117.186333, 39.125004],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "北京森根比亚生物工程技术有限公司",
+            "toName": "武汉",
+            "coords": [
+                [116.674608, 40.360543],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "涿州华诺救生装备有限公司",
+            "toName": "武汉",
+            "coords": [
+                [115.952941, 39.482574],
+                [114.305393, 30.593099]
+            ]
+        },
+
+        {
+            "fromName": "苏州宝集沣生物科技有限公司",
+            "toName": "武汉",
+            "coords": [
+                [120.585868, 31.281277],
+                [114.305393, 30.593099]
+            ]
+        }]
+};
+
+option = {
+    backgroundColor: '#ffffff',
+    title: {
+        text: '湖北红十字会物资来源情况',
+        left: 'center',
+        textStyle: {
+            color: '#404a59'
+        }
+    },
+    legend: {
+        show: true,
+        orient: 'vertical',
+        top: 'top',
+        left: 'left',
+        data: ['N95型口罩','普通口罩','药品', '医用物资','民用物资', '线路'],
+        textStyle: {
+            color: '#404a59'
+        }
+    },
+    geo: {
+        map: 'china',
+        label: {
+            emphasis: {
+                show: false
+            }
+        },
+        roam: true,
+        itemStyle: {
+            normal: {
+                areaColor: '#d2c1c1',
+                borderColor: '#404a59'
+            },
+            emphasis: {
+                areaColor: '#c23531'
+            }
+        }
+    },
+    series: [{
+        name: 'N95型口罩',
+        type: 'effectScatter',
+        coordinateSystem: 'geo',
+        zlevel: 2,
+        rippleEffect: {
+            brushType: 'stroke'
+        },
+        label: {
+            emphasis: {
+                show: true,
+                position: 'right',
+                formatter: '{b}'
+            }
+        },
+        symbolSize: 2,
+        showEffectOn: 'render',
+        itemStyle: {
+            normal: {
+                color: '#F58158'
+            }
+        },
+        data: allData.citys4
+    }, {
+        name: '普通口罩',
+        type: 'effectScatter',
+        coordinateSystem: 'geo',
+        zlevel: 2,
+        rippleEffect: {
+            brushType: 'stroke'
+        },
+        label: {
+            emphasis: {
+                show: true,
+                position: 'right',
+                formatter: '{b}'
+            }
+        },
+        symbolSize: 2,
+        showEffectOn: 'render',
+        itemStyle: {
+            normal: {
+                color: '#58F581'
+            }
+        },
+        data: allData.citys2
+    }, {
+        name: '药品',
+        type: 'effectScatter',
+        coordinateSystem: 'geo',
+        zlevel: 2,
+        rippleEffect: {
+            brushType: 'stroke'
+        },
+        label: {
+            emphasis: {
+                show: true,
+                position: 'right',
+                formatter: '{b}'
+            }
+        },
+        symbolSize: 2,
+        showEffectOn: 'render',
+        itemStyle: {
+            normal: {
+                color: '#F55881'
+            }
+        },
+        data: allData.citys1
+    }, {
+        name: '医用物资',
+        type: 'effectScatter',
+        coordinateSystem: 'geo',
+        zlevel: 2,
+        rippleEffect: {
+            brushType: 'stroke'
+        },
+        label: {
+            emphasis: {
+                show: true,
+                position: 'right',
+                formatter: '{b}'
+            }
+        },
+        symbolSize: 2,
+        showEffectOn: 'render',
+        itemStyle: {
+            normal: {
+                color: '#8158F5'
+            }
+        },
+        data: allData.citys3
+    }, {
+        name: '民用物资',
+        type: 'effectScatter',
+        coordinateSystem: 'geo',
+        zlevel: 2,
+        rippleEffect: {
+            brushType: 'stroke'
+        },
+        label: {
+            emphasis: {
+                show: true,
+                position: 'right',
+                formatter: '{b}'
+            }
+        },
+        symbolSize: 2,
+        showEffectOn: 'render',
+        itemStyle: {
+            normal: {
+                color: '#31F5F8'
+            }
+        },
+        data: allData.citys5
+    }, {
+        name: '线路',
+        type: 'lines',
+        coordinateSystem: 'geo',
+        zlevel: 12,
+        large: true,
+        effect: {
+            show: true,
+            constantSpeed: 30,
+            symbol: 'pin',
+            symbolSize: 7,
+            trailLength: 0,
+        },
+        lineStyle: {
+            normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: '#58B3CC'
+                }, {
+                    offset: 1,
+                    color: '#F55158'
+                }], false),
+                width: 2,
+                opacity: 0.7,
+                curveness: 0.1
+            }
+        },
+        data: allData.moveLines
+    }]
+};
+        //
+ myChart.setOption(option);
+
+    </script>
+
+</body>
+
+</html>
